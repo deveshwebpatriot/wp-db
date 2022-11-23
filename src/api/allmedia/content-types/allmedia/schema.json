@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "allmedias",
+  "info": {
+    "singularName": "allmedia",
+    "pluralName": "allmedias",
+    "displayName": "allmedia",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "media_categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::media-categorie.media-categorie",
+      "inversedBy": "allmedias"
+    },
+    "featuredmedia": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  }
+}

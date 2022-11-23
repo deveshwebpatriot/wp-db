@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "job_applicants",
+  "info": {
+    "singularName": "job-applicant",
+    "pluralName": "job-applicants",
+    "displayName": "Job_Applicant",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "firstName": {
+      "type": "string"
+    },
+    "lastName": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "totalExperience": {
+      "type": "integer"
+    },
+    "job": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::job.job",
+      "inversedBy": "job_applicants"
+    },
+    "resume": {
+      "allowedTypes": [
+        "files"
+      ],
+      "type": "media",
+      "multiple": false
+    }
+  }
+}

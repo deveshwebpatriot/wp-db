@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "media_categories",
+  "info": {
+    "singularName": "media-categorie",
+    "pluralName": "media-categories",
+    "displayName": "media_category",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "mediacategory": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "uid"
+    },
+    "allmedias": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::allmedia.allmedia",
+      "inversedBy": "media_categories"
+    }
+  }
+}
